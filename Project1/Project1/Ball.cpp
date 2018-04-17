@@ -33,8 +33,8 @@ void Ball::move()
 	bool will_be_in = Project1::MyForm::form1->field->isInside(x, y);
 
 	if (is_in && !will_be_in) {
-		if (Project1::MyForm::form1->field->isOutRight(x+r*2, y) ||
-			Project1::MyForm::form1->field->isOutLeft(x - r * 2, y)) {
+		if (Project1::MyForm::form1->field->isOutRight(x, y) ||
+			Project1::MyForm::form1->field->isOutLeft(x, y)) {
 			
 			dir = PI - dir;
 		}
