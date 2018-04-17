@@ -13,12 +13,10 @@ Ball::Ball()
 	dir = 0;
 }
 
-void Ball::draw()
+void Ball::draw(BufferedGraphics ^myBuffer)
 {
-	Graphics ^a = Project1::MyForm::form1->CreateGraphics();
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::Yellow);
-
-	a->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2, r*2));
+	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2, r*2));
 }
 
 void Ball::move()

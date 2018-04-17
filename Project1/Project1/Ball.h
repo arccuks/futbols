@@ -14,7 +14,7 @@ public:
 	int getSpeed() { return speed; }
 	void setDir(double d) { dir = d; }
 	double getDir() { return dir; }
-	void draw();
+	void draw(System::Drawing::BufferedGraphics ^);
 	void move();
 	void moveTo(int xTo, int yTo) { x = xTo; y = yTo; }
 	void getCoord(int& xb, int& yb) { xb = x; yb = y; }

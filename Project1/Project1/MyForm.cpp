@@ -1,4 +1,4 @@
-#include "MyForm.h"
+﻿#include "MyForm.h"
 #include "Ball.h"
 #include "Field.h"
 #include "Windows.h"
@@ -22,21 +22,37 @@ void Project1::MyForm::Simulate()
 		//MessageBox::Show("Fuck");
 
 		ball->move();
-		DrawField();
+		DrawGame();
 		Sleep(50);
 	}
 }
 
-void Project1::MyForm::DrawField()
+void Project1::MyForm::DrawGame()
 {
-	SolidBrush ^myBrush = gcnew SolidBrush(form1->BackColor);
-	Graphics ^a = Project1::MyForm::form1->CreateGraphics();
-	a->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, form1->Width, form1->Height));
+	//Paštaisīts DOUBLE BUFFER!!
+	//Atrisina flickering problēmu :)
+	BufferedGraphicsContext ^currentContext;
+	BufferedGraphics ^myBuffer;
+	// Gets a reference to the current BufferedGraphicsContext
+	currentContext = BufferedGraphicsManager::Current;
+	// Creates a BufferedGraphics instance associated with Form1, and with 
+	// dimensions the same size as the drawing surface of Form1.
+	myBuffer = currentContext->Allocate(this->CreateGraphics(),
+		this->DisplayRectangle);
 
-	field->draw();
-	ball->draw();
+	//Tā kā zīmēju uz formas, tad "notīru" formu pirms katras zīmēšanas
+	SolidBrush ^myBrush = gcnew SolidBrush(form1->BackColor);
+	myBuffer->Graphics->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, form1->Width, form1->Height));
+
+	field->draw(myBuffer);
+	ball->draw(myBuffer);
+
+	myBuffer->Render();
+	myBuffer->Render(this->CreateGraphics());
 }
 
+
+// Uzlieku laukuma izmērus
 void Project1::MyForm::CreateField()
 {
 	field = new Field(form1->Width - 107, form1->Height - 50);

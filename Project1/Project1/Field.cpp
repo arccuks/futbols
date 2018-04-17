@@ -13,25 +13,23 @@ Field::Field(int width, int height)
 	y_c = h / 2;
 }
 
-void Field::draw()
+void Field::draw(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::Green);
-	Graphics ^a = Project1::MyForm::form1->CreateGraphics();
-	a->FillRectangle(myBrush, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right, fieldRect->bottom));
-	drawLines();
+	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right, fieldRect->bottom));
+	drawLines(myBuffer);
 }
 
-void Field::drawLines()
+void Field::drawLines(BufferedGraphics ^myBuffer)
 {
-	Graphics ^a = Project1::MyForm::form1->CreateGraphics();
+	//Graphics ^a = Project1::MyForm::form1->CreateGraphics();
 
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::White);
 	Pen ^pen = gcnew Pen(System::Drawing::Color::White);
-
-
-	a->DrawLine(pen, x_c, fieldRect->bottom - 1, x_c, fieldRect->top);
-	a->DrawEllipse(pen, Rectangle(x_c - 25, y_c - 25, 50, 50));
-	a->FillEllipse(myBrush, Rectangle(x_c - 4, y_c - 4, 8, 8));
+	
+	myBuffer->Graphics->DrawLine(pen, x_c, fieldRect->bottom - 1, x_c, fieldRect->top);
+	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x_c - 25, y_c - 25, 50, 50));
+	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x_c - 4, y_c - 4, 8, 8));
 }
 
 bool Field::isInside(int x, int y)

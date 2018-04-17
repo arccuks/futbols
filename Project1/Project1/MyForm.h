@@ -35,8 +35,6 @@ namespace Project1 {
 			ball->moveTo(100, 100);
 			ball->setSpeed(40);
 			ball->setDir(PI / 4 - 0.1);
-
-			DrawField();
 		}
 		static MyForm ^form1;
 		Ball *ball;
@@ -59,7 +57,7 @@ namespace Project1 {
 	private:
 		bool canSimulateGame = false;
 		Thread ^drawThread;
-		void DrawField();
+		void DrawGame();
 		void CreateField();
 
 	protected:
@@ -138,7 +136,7 @@ namespace Project1 {
 	}
 	private: System::Void MyForm_ResizeEnd(System::Object^  sender, System::EventArgs^  e) {
 		CreateField();
-		DrawField();
+		DrawGame();
 	}
 	private: System::Void MyForm_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 		if (drawThread != nullptr && drawThread->IsAlive) {
@@ -146,7 +144,7 @@ namespace Project1 {
 		}
 	}
 	private: System::Void MyForm_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-		DrawField();
+		DrawGame();
 	}
 
 	};

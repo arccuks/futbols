@@ -13,8 +13,8 @@ public:
 	void getCentre(int& x, int& y) { x = x_c; y = y_c; }
 	int getH() { return h; }
 	int getW() { return w; }
-	void draw();
-	void drawLines();
+	void draw(System::Drawing::BufferedGraphics ^);
+	void drawLines(System::Drawing::BufferedGraphics ^);
 	bool isInside(int x, int y);
 	bool isOutSide(int x, int y);
 	bool isOutLeft(int x, int y);
