@@ -49,6 +49,8 @@ void Project1::MyForm::DrawGame()
 
 	myBuffer->Render();
 	myBuffer->Render(this->CreateGraphics());
+
+	delete myBuffer;
 }
 
 
