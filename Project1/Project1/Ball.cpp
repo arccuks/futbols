@@ -24,17 +24,17 @@ void Ball::draw(BufferedGraphics ^myBuffer)
 void Ball::move()
 {
 	if (speed == 0) return;
-	bool is_in = Project1::MyForm::form1->field->isInside(x, y);
+	bool is_in = Futbols::MyForm::mainForm->field->isInside(x, y);
 
 	x += speed * cos(dir);
 	y -= speed * sin(dir);
 	speed = speed < slowdown ? 0 : speed - slowdown;
 
-	bool will_be_in = Project1::MyForm::form1->field->isInside(x, y);
+	bool will_be_in = Futbols::MyForm::mainForm->field->isInside(x, y);
 
 	if (is_in && !will_be_in) {
-		if (Project1::MyForm::form1->field->isOutRight(x, y) ||
-			Project1::MyForm::form1->field->isOutLeft(x, y)) {
+		if (Futbols::MyForm::mainForm->field->isOutRight(x, y) ||
+			Futbols::MyForm::mainForm->field->isOutLeft(x, y)) {
 			
 			dir = PI - dir;
 		}

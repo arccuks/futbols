@@ -23,8 +23,6 @@ void Field::draw(BufferedGraphics ^myBuffer)
 
 void Field::drawLines(BufferedGraphics ^myBuffer)
 {
-	//Graphics ^a = Project1::MyForm::form1->CreateGraphics();
-
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::White);
 	Pen ^pen = gcnew Pen(System::Drawing::Color::White);
 	

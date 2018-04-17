@@ -11,11 +11,11 @@ using namespace System::Windows::Forms;
 void Main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	Project1::MyForm form;
+	Futbols::MyForm form;
 	Application::Run(%form);
 }
 
-void Project1::MyForm::Simulate()
+void Futbols::MyForm::Simulate()
 {
 	while (canSimulateGame) {
 
@@ -27,7 +27,7 @@ void Project1::MyForm::Simulate()
 	}
 }
 
-void Project1::MyForm::DrawGame()
+void Futbols::MyForm::DrawGame()
 {
 	//Paštaisīts DOUBLE BUFFER!!
 	//Atrisina flickering problēmu :)
@@ -41,25 +41,30 @@ void Project1::MyForm::DrawGame()
 		this->DisplayRectangle);
 
 	//Tā kā zīmēju uz formas, tad "notīru" formu pirms katras zīmēšanas
-	SolidBrush ^myBrush = gcnew SolidBrush(form1->BackColor);
-	myBuffer->Graphics->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, form1->Width, form1->Height));
+	SolidBrush ^myBrush = gcnew SolidBrush(mainForm->BackColor);
+	myBuffer->Graphics->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, mainForm->Width, mainForm->Height));
 
 	delete myBrush;
 
 	field->draw(myBuffer);
 	ball->draw(myBuffer);
 
-	myBuffer->Render();
+	//sis laikam nav vajadzīgs
+	//myBuffer->Render();
 	myBuffer->Render(this->CreateGraphics());
 
+	//mem leak fix
 	delete myBuffer;
 	currentContext = nullptr;
 	delete currentContext;
+
+	//it kā mazliet palīdz, but it is never good to call it
+	//GC::Collect();
 }
 
 
 // Uzlieku laukuma izmērus
-void Project1::MyForm::CreateField()
+void Futbols::MyForm::CreateField()
 {
-	field = new Field(form1->Width - 107, form1->Height - 50);
+	field = new Field(mainForm->Width - 107, mainForm->Height - 50);
 }

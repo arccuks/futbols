@@ -6,7 +6,7 @@
 class Ball;
 class Field;
 
-namespace Project1 {
+namespace Futbols {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -28,7 +28,7 @@ namespace Project1 {
 			//
 			//TODO: Add the constructor code here
 			//
-			form1 = this;
+			mainForm = this;
 			CreateField();
 			ball = new Ball();
 
@@ -36,10 +36,10 @@ namespace Project1 {
 			ball->setSpeed(41);
 			ball->setDir(PI / 4 - 0.1);
 		}
-		static MyForm ^form1;
 		Ball *ball;
-		Field * field;
+		Field *field;
 		void Simulate();
+		static MyForm ^mainForm;
 
 	protected:
 		/// <summary>
