@@ -44,6 +44,8 @@ void Project1::MyForm::DrawGame()
 	SolidBrush ^myBrush = gcnew SolidBrush(form1->BackColor);
 	myBuffer->Graphics->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, form1->Width, form1->Height));
 
+	delete myBrush;
+
 	field->draw(myBuffer);
 	ball->draw(myBuffer);
 
@@ -51,6 +53,8 @@ void Project1::MyForm::DrawGame()
 	myBuffer->Render(this->CreateGraphics());
 
 	delete myBuffer;
+	currentContext = nullptr;
+	delete currentContext;
 }
 
 

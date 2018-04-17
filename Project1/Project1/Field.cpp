@@ -17,6 +17,7 @@ void Field::draw(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::Green);
 	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right, fieldRect->bottom));
+	delete myBrush;
 	drawLines(myBuffer);
 }
 
@@ -30,6 +31,9 @@ void Field::drawLines(BufferedGraphics ^myBuffer)
 	myBuffer->Graphics->DrawLine(pen, x_c, fieldRect->bottom - 1, x_c, fieldRect->top);
 	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x_c - 25, y_c - 25, 50, 50));
 	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x_c - 4, y_c - 4, 8, 8));
+
+	delete myBrush;
+	delete pen;
 }
 
 bool Field::isInside(int x, int y)
