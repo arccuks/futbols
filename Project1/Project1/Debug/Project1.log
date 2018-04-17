@@ -1,8 +1,0 @@
-﻿  Ball.cpp
-c:\git\futbols\project1\project1\ball.cpp(29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-c:\git\futbols\project1\project1\ball.cpp(30): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  Field.cpp
-  MyForm.cpp
-  Rect.cpp
-  Generating Code...
-  Project1.vcxproj -> C:\Git\Futbols\Project1\Debug\Project1.exe
