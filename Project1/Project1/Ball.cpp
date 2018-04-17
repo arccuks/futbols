@@ -7,7 +7,7 @@ using namespace System::Drawing;
 
 Ball::Ball()
 {
-	r = 4;
+	r = 3;
 	speed = 0;
 	slowdown = 1;
 	dir = 0;

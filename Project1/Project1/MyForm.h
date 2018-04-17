@@ -33,7 +33,7 @@ namespace Project1 {
 			ball = new Ball();
 
 			ball->moveTo(100, 100);
-			ball->setSpeed(40);
+			ball->setSpeed(41);
 			ball->setDir(PI / 4 - 0.1);
 		}
 		static MyForm ^form1;
@@ -111,7 +111,6 @@ namespace Project1 {
 			this->ClientSize = System::Drawing::Size(686, 371);
 			this->Controls->Add(this->buttonStop);
 			this->Controls->Add(this->buttonStart);
-			this->DoubleBuffered = true;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing);
