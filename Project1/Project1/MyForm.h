@@ -8,6 +8,10 @@
 #include "Player.h"
 #include "AssReferee.h"
 #include "Referee.h"
+#include "Forward.h"
+#include "HalfBack.h"
+#include "FullBack.h"
+#include "Goalkeeper.h"
 
 
 #define PI 3.1415926535897932385
@@ -49,12 +53,57 @@ namespace Futbols {
 			mainForm = this;
 			FieldImage = panelField;
 
-			CreateField();
-			ball = gcnew Ball();
+			field = gcnew Field;
+			ball = gcnew Ball;
+			assRef1 = gcnew AssReferee();
+			assRef2 = gcnew AssReferee();
+			referee = gcnew Referee();
 
-			ball->moveTo(100, 100);
-			ball->setSpeed(41);
-			ball->setDir(PI / 4 - 0.1);
+			Player ^p;
+			// Make Team1
+			int n = 0;
+			p = gcnew Forward(1, ++n);
+			Team1.Add(p);
+			p = gcnew Forward(1, ++n);
+			Team1.Add(p);
+			p = gcnew Forward(1, ++n);
+			Team1.Add(p);
+			p = gcnew HalfBack(1, ++n);
+			Team1.Add(p);
+			p = gcnew FullBack(1, ++n);
+			Team1.Add(p);
+			p = gcnew FullBack(1, ++n);
+			Team1.Add(p);
+			p = gcnew Goalkeeper(1, ++n);
+			Team1.Add(p);
+			// Make Team2
+			n = 0;
+			p = gcnew Forward(1, ++n);
+			Team2.Add(p);
+			p = gcnew Forward(1, ++n);
+			Team2.Add(p);
+			p = gcnew Forward(1, ++n);
+			Team2.Add(p);
+			p = gcnew HalfBack(1, ++n);
+			Team2.Add(p);
+			p = gcnew FullBack(1, ++n);
+			Team2.Add(p);
+			p = gcnew FullBack(1, ++n);
+			Team2.Add(p);
+			p = gcnew Goalkeeper(1, ++n);
+			Team2.Add(p);
+
+			for (int i = 0; i<5; ++i) girl[i] = gcnew Girl;
+			lights[0] = gcnew Lights(0, 0, 250, PI / 32, -PI / 12, -PI / 2 + PI / 12, PI / 12, PI / 3);
+			lights[1] = gcnew Lights(FieldImage->Width, 0, 250, PI / 32, -PI / 2 - PI / 8, -PI + PI / 8, PI / 12, PI / 3);
+			position0();
+			drawAll();
+
+			for (int i = 0; i < Team1.Count; i++) Team1[i]->setEnergy((rand()% 2000) + 2000);
+			for (int i = 0; i < Team2.Count; i++) Team2[i]->setEnergy((rand() % 2000) + 2000);
+			gameState = sStop;
+			scoreL = scoreR = 0;
+			time = 0;
 		}
 		
 	private: System::Windows::Forms::Panel^  panelField;
@@ -96,8 +145,6 @@ namespace Futbols {
 	private:
 		bool canSimulateGame = false;
 		Thread ^drawThread;
-		void DrawGame();
-		void CreateField();
 
 	private:
 		void startGame();
@@ -209,8 +256,8 @@ namespace Futbols {
 		this->buttonStop->Enabled = false;
 	}
 	private: System::Void MyForm_ResizeEnd(System::Object^  sender, System::EventArgs^  e) {
-		CreateField();
-		DrawGame();
+		/*CreateField();
+		DrawGame();*/
 	}
 	private: System::Void MyForm_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 		if (drawThread != nullptr && drawThread->IsAlive) {
@@ -218,7 +265,7 @@ namespace Futbols {
 		}
 	}
 	private: System::Void MyForm_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-		DrawGame();
+		drawAll();
 	}
 
 	};

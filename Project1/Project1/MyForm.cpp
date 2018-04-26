@@ -34,22 +34,11 @@ void Futbols::MyForm::Simulate()
 		//MessageBox::Show("Fuck");
 
 		ball->move();
-		DrawGame();
+		//DrawGame();
 		Sleep(50);
 	}
 }
 
-void Futbols::MyForm::DrawGame()
-{
-
-}
-
-
-// Uzlieku laukuma izmērus
-void Futbols::MyForm::CreateField()
-{
-	//field = gcnew Field(mainForm->Width - 107, mainForm->Height - 50);
-}
 
 void Futbols::MyForm::startGame()
 {
@@ -75,7 +64,7 @@ void Futbols::MyForm::drawAll()
 	currentContext = BufferedGraphicsManager::Current;
 
 	myBuffer = currentContext->Allocate(this->panelField->CreateGraphics(),
-		this->DisplayRectangle);
+		this->panelField->DisplayRectangle);
 
 	//Tā kā zīmēju uz formas, tad "notīru" formu pirms katras zīmēšanas
 	/*SolidBrush ^myBrush = gcnew SolidBrush(mainForm->BackColor);
@@ -98,7 +87,7 @@ void Futbols::MyForm::drawAll()
 		Team2[i]->draw(myBuffer);
 	for (int i = 0; i < 5; ++i) girl[i]->draw(myBuffer);
 
-	myBuffer->Render(this->CreateGraphics());
+	myBuffer->Render(this->panelField->CreateGraphics());
 
 	//mem leak fix
 	delete myBuffer;

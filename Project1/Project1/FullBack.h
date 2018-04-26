@@ -1,4 +1,6 @@
 #include "Player.h"
+
+#pragma once
 ref class FullBack : public Player
 {
 protected:

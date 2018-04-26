@@ -9,7 +9,7 @@ using namespace System::Drawing;
 Girl::Girl()
 {
 	type = tGirl;
-	//color = Color::Fuchsia;
+	color = Color::Fuchsia;
 	speed = 5;
 }
 

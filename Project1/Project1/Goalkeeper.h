@@ -1,4 +1,6 @@
 #include "Player.h"
+
+#pragma once
 ref class Goalkeeper : public Player
 {
 protected:
