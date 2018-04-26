@@ -1,5 +1,5 @@
 #pragma once
-class Rect
+ref class Rect
 {
 public:
 	Rect(int, int, int, int);
@@ -7,5 +7,7 @@ public:
 	int right;
 	int top;
 	int bottom;
+	int Height();
+	int Width();
 };
 

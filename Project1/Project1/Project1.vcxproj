@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -134,23 +134,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AssReferee.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="Forward.cpp" />
+    <ClCompile Include="FullBack.cpp" />
+    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="Girl.cpp" />
+    <ClCompile Include="Goalkeeper.cpp" />
+    <ClCompile Include="HalfBack.cpp" />
+    <ClCompile Include="Human.cpp" />
+    <ClCompile Include="Lights.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Referee.cpp" />
+    <ClCompile Include="TPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssReferee.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="Forward.h" />
+    <ClInclude Include="FullBack.h" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="Girl.h" />
+    <ClInclude Include="Goalkeeper.h" />
+    <ClInclude Include="HalfBack.h" />
+    <ClInclude Include="Human.h" />
+    <ClInclude Include="Lights.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="Referee.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="TPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Futbols.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

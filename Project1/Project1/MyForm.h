@@ -1,10 +1,28 @@
 #pragma once
+//---------------------------------------------------------------------------
 #include "Ball.h"
 #include "Field.h"
+#include <vector>
+#include "Girl.h"
+#include "Lights.h"
+#include "Player.h"
+#include "AssReferee.h"
+#include "Referee.h"
+
+
 #define PI 3.1415926535897932385
 
-class Ball;
-class Field;
+//class Field;
+//class Ball;
+//class AssReferee;
+//class Referee;
+//class Player;
+//class Girl;
+//class Lights;
+
+enum state { sStop, sRunning, sPause, sGoal, sRestartGame, sFirstKick };
+
+using namespace System::Collections::Generic;
 
 namespace Futbols {
 
@@ -29,17 +47,38 @@ namespace Futbols {
 			//TODO: Add the constructor code here
 			//
 			mainForm = this;
+			FieldImage = panelField;
+
 			CreateField();
-			ball = new Ball();
+			ball = gcnew Ball();
 
 			ball->moveTo(100, 100);
 			ball->setSpeed(41);
 			ball->setDir(PI / 4 - 0.1);
 		}
-		Ball *ball;
-		Field *field;
+		
+	private: System::Windows::Forms::Panel^  panelField;
+	private: System::Windows::Forms::CheckBox^  checkBoxSound;
+			 int time;
+			 void energyControl();
+	public:
+		Ball ^ball;
+		Field ^field;
+		Referee ^referee;
+		AssReferee ^assRef1;
+		AssReferee ^assRef2;
+		List<Player^> Team1;
+		List<Player^> Team2;
+		static array<Girl^> ^girl = gcnew array<Girl^>(5);
+		static array<Lights^> ^lights = gcnew array<Lights^>(2);
+
+		String ^EnergyLeft;
+
 		void Simulate();
 		static MyForm ^mainForm;
+		static Panel ^FieldImage;
+
+		state gameState;
 
 	protected:
 		/// <summary>
@@ -60,7 +99,18 @@ namespace Futbols {
 		void DrawGame();
 		void CreateField();
 
-	protected:
+	private:
+		void startGame();
+		void drawAll();
+		void moveAll();
+		void position0();
+		void position1();
+		void position2();
+		void sound(String ^soundFile);
+		
+		int scoreL;
+		int scoreR;
+		
 
 
 	protected:
@@ -80,6 +130,8 @@ namespace Futbols {
 		{
 			this->buttonStart = (gcnew System::Windows::Forms::Button());
 			this->buttonStop = (gcnew System::Windows::Forms::Button());
+			this->panelField = (gcnew System::Windows::Forms::Panel());
+			this->checkBoxSound = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// buttonStart
@@ -104,11 +156,33 @@ namespace Futbols {
 			this->buttonStop->UseVisualStyleBackColor = true;
 			this->buttonStop->Click += gcnew System::EventHandler(this, &MyForm::buttonStop_Click);
 			// 
+			// panelField
+			// 
+			this->panelField->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panelField->Location = System::Drawing::Point(12, 12);
+			this->panelField->Name = L"panelField";
+			this->panelField->Size = System::Drawing::Size(581, 347);
+			this->panelField->TabIndex = 2;
+			// 
+			// checkBoxSound
+			// 
+			this->checkBoxSound->AutoSize = true;
+			this->checkBoxSound->Location = System::Drawing::Point(599, 284);
+			this->checkBoxSound->Name = L"checkBoxSound";
+			this->checkBoxSound->Size = System::Drawing::Size(57, 17);
+			this->checkBoxSound->TabIndex = 3;
+			this->checkBoxSound->Text = L"Sound";
+			this->checkBoxSound->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(686, 371);
+			this->Controls->Add(this->checkBoxSound);
+			this->Controls->Add(this->panelField);
 			this->Controls->Add(this->buttonStop);
 			this->Controls->Add(this->buttonStart);
 			this->Name = L"MyForm";
@@ -117,6 +191,7 @@ namespace Futbols {
 			this->ResizeEnd += gcnew System::EventHandler(this, &MyForm::MyForm_ResizeEnd);
 			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::MyForm_Paint);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion

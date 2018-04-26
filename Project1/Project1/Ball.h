@@ -1,5 +1,6 @@
+
 #pragma once
-class Ball
+ref class Ball
 {
 private:
 	int x;
@@ -8,6 +9,7 @@ private:
 	int speed;
 	int slowdown;
 	double dir;
+	System::Drawing::Color color;
 public:
 	Ball();
 	void setSpeed(int s) { speed = s; }
@@ -19,4 +21,3 @@ public:
 	void moveTo(int xTo, int yTo) { x = xTo; y = yTo; }
 	void getCoord(int& xb, int& yb) { xb = x; yb = y; }
 };
-

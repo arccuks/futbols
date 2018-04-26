@@ -7,3 +7,13 @@ Rect::Rect(int left, int top, int right, int bottom)
 	this->top = top;
 	this->bottom = bottom;
 }
+
+int Rect::Width()
+{
+	return right - left;
+}
+
+int Rect::Height() 
+{
+	return bottom - top;
+}

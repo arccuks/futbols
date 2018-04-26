@@ -18,8 +18,18 @@ Class Futbols.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    Ball* ball : Public
-    Field* field : Public
+    Ball ball : Public
+    Field field : Public
+    Referee referee : Public
+    AssReferee assRef1 : Public
+    AssReferee assRef2 : Public
+    System.Collections.Generic.List`1[Player] Team1 IsByValue : Public, InitOnly
+    System.Collections.Generic.List`1[Player] Team2 IsByValue : Public, InitOnly
+    System.String EnergyLeft : Public
+    state gameState : Public
+    Girl[] girl : Public, Static
+    Lights[] lights : Public, Static
     Futbols.MyForm mainForm : Public, Static
+    System.Windows.Forms.Panel FieldImage : Public, Static
   Methods:
     Simulate(): PrivateScope, Public, HideBySig
