@@ -15,7 +15,7 @@ Ball::Ball()
 void Ball::draw(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(color);
-	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2, r*2));
+	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2, r*2)); // Futbols::MyForm::mainForm->field->getBorderW()*2
 
 	delete myBrush;
 }

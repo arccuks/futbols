@@ -78,19 +78,19 @@ namespace Futbols {
 			Team1.Add(p);
 			// Make Team2
 			n = 0;
-			p = gcnew Forward(1, ++n);
+			p = gcnew Forward(2, ++n);
 			Team2.Add(p);
-			p = gcnew Forward(1, ++n);
+			p = gcnew Forward(2, ++n);
 			Team2.Add(p);
-			p = gcnew Forward(1, ++n);
+			p = gcnew Forward(2, ++n);
 			Team2.Add(p);
-			p = gcnew HalfBack(1, ++n);
+			p = gcnew HalfBack(2, ++n);
 			Team2.Add(p);
-			p = gcnew FullBack(1, ++n);
+			p = gcnew FullBack(2, ++n);
 			Team2.Add(p);
-			p = gcnew FullBack(1, ++n);
+			p = gcnew FullBack(2, ++n);
 			Team2.Add(p);
-			p = gcnew Goalkeeper(1, ++n);
+			p = gcnew Goalkeeper(2, ++n);
 			Team2.Add(p);
 
 			for (int i = 0; i<5; ++i) girl[i] = gcnew Girl;

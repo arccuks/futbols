@@ -3,6 +3,7 @@
 #include "Rect.h"
 
 using namespace System::Drawing;
+using namespace System::Drawing::Drawing2D;
 
 Field::Field()
 {
@@ -24,14 +25,11 @@ Field::Field()
 
 void Field::draw(BufferedGraphics ^myBuffer)
 {
-	SolidBrush ^myBrush = gcnew SolidBrush(Color::Green);
-	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right, fieldRect->bottom));
-	delete myBrush;
-	
-
-	myBrush = gcnew SolidBrush(Color::Black);
+	SolidBrush ^myBrush = gcnew SolidBrush(Color::Black);
 	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(0, 0, Futbols::MyForm::mainForm->FieldImage->Width, Futbols::MyForm::mainForm->FieldImage->Height));
-	delete myBrush;
+
+	myBrush = gcnew SolidBrush(Color::Green);
+	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right-borderWidth, fieldRect->bottom- borderWidth));
 
 	drawLines(myBuffer);
 }
@@ -40,48 +38,30 @@ void Field::drawLines(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::White);
 	Pen ^pen = gcnew Pen(System::Drawing::Color::White);
-	
-	myBuffer->Graphics->DrawLine(pen, x_c, fieldRect->bottom - 1, x_c, fieldRect->top);
-	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x_c - 25, y_c - 25, 50, 50));
-	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x_c - 4, y_c - 4, 8, 8));
 
+	//speles laukuma baltas malas
+	myBuffer->Graphics->DrawRectangle(pen, Rectangle(fieldRect->left, fieldRect->top, fieldRect->right- borderWidth, fieldRect->bottom- borderWidth));
 	
-	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(0, y_c - goalWidth / 2, fieldRect->left, y_c + goalWidth / 2));
-	myBuffer->Graphics->FillRectangle(myBrush, Rectangle(fieldRect->right, y_c - goalWidth / 2, fieldRect->right + borderWidth, y_c + goalWidth / 2));
-	myBuffer->Graphics->DrawRectangle(pen, 0, y_c - goalWidth / 2, fieldRect->left, y_c + goalWidth / 2);
-	myBuffer->Graphics->DrawRectangle(pen, fieldRect->right, y_c - goalWidth / 2, fieldRect->right + borderWidth, y_c + goalWidth / 2);
-	myBuffer->Graphics->DrawRectangle(pen, fieldRect->left, y_c - goalAreaH / 2, fieldRect->left + goalAreaW, y_c + goalAreaH / 2);
-	myBuffer->Graphics->DrawRectangle(pen, fieldRect->right - goalAreaW, y_c - goalAreaH / 2, fieldRect->right, y_c + goalAreaH / 2);
+	//centra rinkis, centra truksais rinkis, centra linija
+	myBuffer->Graphics->DrawLine(pen, x_c, fieldRect->bottom - 1, x_c, fieldRect->top);
+	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x_c - cirCenRad, y_c - cirCenRad, cirCenRad*2, cirCenRad*2));
+	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x_c - cenRad, y_c - cenRad, cenRad*2, cenRad*2));
+
+	//sis vel nav skatits
+	myBrush = gcnew SolidBrush(Color::White);
+	HatchBrush ^hBrush = gcnew HatchBrush(HatchStyle::DiagonalCross, Color::White, Color::Black);
+
+	//Vartu rezgis abam pusem
+	myBuffer->Graphics->FillRectangle(hBrush, Rectangle(0, y_c - goalWidth / 2, borderWidth, goalWidth));
+	myBuffer->Graphics->FillRectangle(hBrush, Rectangle(fieldRect->right, y_c - goalWidth / 2, borderWidth, goalWidth));
+	myBuffer->Graphics->DrawRectangle(pen, Rectangle(0, y_c - goalWidth / 2, borderWidth, goalWidth));
+	myBuffer->Graphics->DrawRectangle(pen, Rectangle(fieldRect->right, y_c - goalWidth / 2, borderWidth, goalWidth));
+	myBuffer->Graphics->DrawRectangle(pen, fieldRect->left, y_c - goalAreaH / 2, goalAreaW, goalAreaH);
+	myBuffer->Graphics->DrawRectangle(pen, fieldRect->right - goalAreaW, y_c - goalAreaH / 2, goalAreaW, goalAreaH);
 
 	delete myBrush;
+	delete hBrush;
 	delete pen;
-
-	/*TColor currPenColor = aCanvas->Pen->Color;
-	TColor currBrushColor = aCanvas->Brush->Color;
-	TBrushStyle currBrushStyle = aCanvas->Brush->Style;
-	aCanvas->Brush->Style = bsClear;
-	aCanvas->Pen->Color = clWhite;
-	aCanvas->Rectangle(*fieldRect);
-	aCanvas->MoveTo(x_c, fieldRect->bottom - 1);
-	aCanvas->LineTo(x_c, fieldRect->top);
-	aCanvas->Ellipse(x_c - 45, y_c - 45, x_c + 45, y_c + 45);
-	aCanvas->Brush->Color = clWhite;
-	aCanvas->Ellipse(x_c - 2, y_c - 2, x_c + 2, y_c + 2);
-
-
-	aCanvas->Brush->Color = clWhite;
-	aCanvas->Brush->Style = bsDiagCross;
-	aCanvas->FillRect(Rect(0, y_c - goalWidth / 2, fieldRect->left, y_c + goalWidth / 2));
-	aCanvas->FillRect(Rect(fieldRect->right, y_c - goalWidth / 2, fieldRect->right + borderWidth, y_c + goalWidth / 2));
-	aCanvas->Rectangle(0, y_c - goalWidth / 2, fieldRect->left, y_c + goalWidth / 2);
-	aCanvas->Rectangle(fieldRect->right, y_c - goalWidth / 2, fieldRect->right + borderWidth, y_c + goalWidth / 2);
-	aCanvas->Brush->Style = bsClear;
-	aCanvas->Rectangle(fieldRect->left, y_c - goalAreaH / 2, fieldRect->left + goalAreaW, y_c + goalAreaH / 2);
-	aCanvas->Rectangle(fieldRect->right - goalAreaW, y_c - goalAreaH / 2, fieldRect->right, y_c + goalAreaH / 2);
-
-	aCanvas->Brush->Style = currBrushStyle;
-	aCanvas->Pen->Color = currPenColor;
-	aCanvas->Brush->Color = currBrushColor;*/
 }
 
 bool Field::isInside(int x, int y)

@@ -14,6 +14,8 @@ private:
 	int goalWidth;
 	int goalAreaW;
 	int goalAreaH;
+	int cenRad = 2;
+	int cirCenRad = 45;
 
 public:
 	Field();

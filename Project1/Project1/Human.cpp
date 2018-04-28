@@ -23,8 +23,7 @@ void Human::draw(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(color);
 	Pen ^pen = gcnew Pen(color);
-	//aCanvas->Ellipse(x - r, y - r, x + r, y + r);
-	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x - r, y - r, x + r , y + r)); // *2 pedejos 2 radiussus 
+	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2 , r*2));
 
 	delete myBrush;
 	delete pen;
