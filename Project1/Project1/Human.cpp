@@ -24,7 +24,4 @@ void Human::draw(BufferedGraphics ^myBuffer)
 	SolidBrush ^myBrush = gcnew SolidBrush(color);
 	Pen ^pen = gcnew Pen(color);
 	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x - r, y - r, r*2 , r*2));
-
-	delete myBrush;
-	delete pen;
 }

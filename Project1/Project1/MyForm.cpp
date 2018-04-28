@@ -29,13 +29,71 @@ void Futbols::MyForm::energyControl()
 
 void Futbols::MyForm::Simulate()
 {
+	startGame();
 	while (canSimulateGame) {
 
-		//MessageBox::Show("Fuck");
+		canSimulateGame = true;
 
-		ball->move();
-		//DrawGame();
-		Sleep(50);
+		//TimeTxt->Caption = IntToStr(++time);
+
+		int xc, yc, xb, yb;
+		field->getCentre(xc, yc);
+		ball->getCoord(xb, yb);
+
+		drawAll();
+
+		switch (gameState) {
+		case sGoal:
+			::Sleep(1000);
+			//FG_Frm->CommentText->Caption = "***** GOAL!!! *****";
+			sound("whistle.wav");
+			sound("mencheer.wav");
+			/*ScoreLeft->Caption = IntToStr(scoreL);
+			ScoreRight->Caption = IntToStr(scoreR);*/
+			if (checkBoxGirls->Checked) {
+				gameState = sPause;
+				lights[0]->on = lights[1]->on = true;
+				sound("successtada.wav");
+			}
+			else gameState = sRestartGame;
+			return;
+		case sRestartGame:
+			::Sleep(1000);
+			for (int i = 0; i<5; ++i) girl[i]->moveTo(xc - 2 * 6 + i * 6, 4);
+			lights[0]->on = lights[1]->on = false;
+			sound("whistle.wav");
+			gameState = sFirstKick;
+			return;
+
+		}
+
+		if (field->isGoalLeft(xb, yb))
+		{
+			scoreR += 1;
+			gameState = sGoal;
+			ball->moveTo(xc, yc);
+			ball->setSpeed(0);
+			position1();
+			return;
+		}
+
+		if (field->isGoalRight(xb, yb))
+		{
+			scoreL += 1;
+			gameState = sGoal;
+			ball->moveTo(xc, yc);
+			ball->setSpeed(0);
+			position2();
+			return;
+		}
+
+		Sleep(500 - 50 * 9);
+		//::Sleep(500 - 50 * TrackBar->Position);  //slows down action
+
+		moveAll();
+
+		energyControl();
+		
 	}
 }
 
@@ -62,10 +120,10 @@ void Futbols::MyForm::drawAll()
 	BufferedGraphics ^myBuffer;
 
 	currentContext = BufferedGraphicsManager::Current;
-
 	myBuffer = currentContext->Allocate(this->panelField->CreateGraphics(),
 		this->panelField->DisplayRectangle);
 
+	//@DELETE?
 	//Tā kā zīmēju uz formas, tad "notīru" formu pirms katras zīmēšanas
 	/*SolidBrush ^myBrush = gcnew SolidBrush(mainForm->BackColor);
 	myBuffer->Graphics->FillRectangle(myBrush, System::Drawing::Rectangle(0, 0, mainForm->Width, mainForm->Height));
@@ -89,6 +147,7 @@ void Futbols::MyForm::drawAll()
 
 	myBuffer->Render(this->panelField->CreateGraphics());
 
+	//@DELETE?
 	//mem leak fix
 	delete myBuffer;
 	currentContext = nullptr;
@@ -145,6 +204,11 @@ void Futbols::MyForm::position1()
 	int xc, yc;
 	field->getCentre(xc, yc);
 	referee->moveTo(xc + 50, yc - 50);
+
+	//@HERE
+	assRef1->moveTo(xc, field->getBorderW() /2);
+	assRef2->moveTo(xc, field->);
+
 	Team1[0]->moveTo(xc - 5, yc);
 	for (int i = 1; i < Team1.Count; i++)
 	{

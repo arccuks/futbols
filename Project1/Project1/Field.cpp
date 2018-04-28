@@ -37,6 +37,7 @@ void Field::draw(BufferedGraphics ^myBuffer)
 void Field::drawLines(BufferedGraphics ^myBuffer)
 {
 	SolidBrush ^myBrush = gcnew SolidBrush(Color::White);
+	HatchBrush ^hBrush = gcnew HatchBrush(HatchStyle::DiagonalCross, Color::White, Color::Black);
 	Pen ^pen = gcnew Pen(System::Drawing::Color::White);
 
 	//speles laukuma baltas malas
@@ -47,21 +48,16 @@ void Field::drawLines(BufferedGraphics ^myBuffer)
 	myBuffer->Graphics->DrawEllipse(pen, Rectangle(x_c - cirCenRad, y_c - cirCenRad, cirCenRad*2, cirCenRad*2));
 	myBuffer->Graphics->FillEllipse(myBrush, Rectangle(x_c - cenRad, y_c - cenRad, cenRad*2, cenRad*2));
 
-	//sis vel nav skatits
-	myBrush = gcnew SolidBrush(Color::White);
-	HatchBrush ^hBrush = gcnew HatchBrush(HatchStyle::DiagonalCross, Color::White, Color::Black);
-
 	//Vartu rezgis abam pusem
 	myBuffer->Graphics->FillRectangle(hBrush, Rectangle(0, y_c - goalWidth / 2, borderWidth, goalWidth));
 	myBuffer->Graphics->FillRectangle(hBrush, Rectangle(fieldRect->right, y_c - goalWidth / 2, borderWidth, goalWidth));
 	myBuffer->Graphics->DrawRectangle(pen, Rectangle(0, y_c - goalWidth / 2, borderWidth, goalWidth));
 	myBuffer->Graphics->DrawRectangle(pen, Rectangle(fieldRect->right, y_c - goalWidth / 2, borderWidth, goalWidth));
+	
+	// vartu laukums
 	myBuffer->Graphics->DrawRectangle(pen, fieldRect->left, y_c - goalAreaH / 2, goalAreaW, goalAreaH);
 	myBuffer->Graphics->DrawRectangle(pen, fieldRect->right - goalAreaW, y_c - goalAreaH / 2, goalAreaW, goalAreaH);
 
-	delete myBrush;
-	delete hBrush;
-	delete pen;
 }
 
 bool Field::isInside(int x, int y)

@@ -108,6 +108,7 @@ namespace Futbols {
 		
 	private: System::Windows::Forms::Panel^  panelField;
 	private: System::Windows::Forms::CheckBox^  checkBoxSound;
+	private: System::Windows::Forms::CheckBox^  checkBoxGirls;
 			 int time;
 			 void energyControl();
 	public:
@@ -179,6 +180,7 @@ namespace Futbols {
 			this->buttonStop = (gcnew System::Windows::Forms::Button());
 			this->panelField = (gcnew System::Windows::Forms::Panel());
 			this->checkBoxSound = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBoxGirls = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// buttonStart
@@ -223,11 +225,22 @@ namespace Futbols {
 			this->checkBoxSound->Text = L"Sound";
 			this->checkBoxSound->UseVisualStyleBackColor = true;
 			// 
+			// checkBoxGirls
+			// 
+			this->checkBoxGirls->AutoSize = true;
+			this->checkBoxGirls->Location = System::Drawing::Point(599, 261);
+			this->checkBoxGirls->Name = L"checkBoxGirls";
+			this->checkBoxGirls->Size = System::Drawing::Size(86, 17);
+			this->checkBoxGirls->TabIndex = 4;
+			this->checkBoxGirls->Text = L"Pause Show";
+			this->checkBoxGirls->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(686, 371);
+			this->Controls->Add(this->checkBoxGirls);
 			this->Controls->Add(this->checkBoxSound);
 			this->Controls->Add(this->panelField);
 			this->Controls->Add(this->buttonStop);

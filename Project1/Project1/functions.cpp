@@ -66,7 +66,6 @@ void angellipse(BufferedGraphics ^myBuffer, int xc, int yc, int r, double a1, do
 
 	Pen ^myPen = gcnew Pen(Color::Lime); //@TODO kas par krasu seit?
 	myBuffer->Graphics->DrawPolygon(myPen, poly);
-	delete poly;
 }
 
 #endif
