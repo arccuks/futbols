@@ -64,8 +64,8 @@ void angellipse(BufferedGraphics ^myBuffer, int xc, int yc, int r, double a1, do
 		++i;
 	}
 
-	Pen ^myPen = gcnew Pen(Color::Lime); //@TODO kas par krasu seit?
-	myBuffer->Graphics->DrawPolygon(myPen, poly);
+	SolidBrush ^brush = gcnew SolidBrush(Color::Lime); //@TODO kas par krasu seit?
+	myBuffer->Graphics->FillPolygon(brush, poly);
 }
 
 #endif

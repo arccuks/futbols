@@ -42,8 +42,8 @@ void Lights::draw(System::Drawing::BufferedGraphics ^myBuffer)
 	int y2 = yspot + spotWidth / 2 * cos(dir);
 
 	array<Point>^poly = {Point(x,y),Point(x1,y1),Point(x2,y2) };
-	Pen ^myPen = gcnew Pen(Color::Yellow);
-	myBuffer->Graphics->DrawPolygon(myPen, poly);
+	SolidBrush ^brush = gcnew SolidBrush(Color::Yellow);
+	myBuffer->Graphics->FillPolygon(brush, poly);
 
 	angellipse(myBuffer, xspot, yspot, spotLength / 2, 0, 2 * PI, dir, spotWidth*1.0 / spotLength);
 }

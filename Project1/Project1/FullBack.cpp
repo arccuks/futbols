@@ -31,7 +31,14 @@ void FullBack::move()
 	Futbols::MyForm::mainForm->field->getCentre(xc, yc);
 
 	energy = energy>0 ? --energy : 0;
-	speed = 3 + (rand() % (energy / 1000));
+
+	//@BUG
+	if ((energy / 1000) > 1) {
+		speed = 3 + (rand() % (energy / 1000));
+	}
+	else {
+		speed = 3;
+	}
 
 	xd = xb; yd = yb;
 	if (teamNo == 1 && xb>xc) { xd = disperse(xc / 2, xc / 4); yd = (rand() % (2 * yc)); }

@@ -50,7 +50,12 @@ void Player::move()
 	bool ownSide = (teamNo == 1 && x < xc) || (teamNo == 2 && x > xc);
 	if (ownSide && distance(x, y, xb, yb) > 150) yd = disperse(y, 50);
 	energy = energy > 0 ? --energy : 0;
-	speed = 5 + (rand() % (energy / 1000));
+	
+	//@BUG
+	if ((energy / 1000) > 1) {
+		speed = 5 + (rand() % (energy / 1000));
+	}
+	else speed = 5;
 
 	dir = direction(x, y, xd, yd);
 	dir = disperse(dir, PI / 12);

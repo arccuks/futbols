@@ -17,7 +17,15 @@ void AssReferee::move()
 {
 	int xb, yb;
 	Futbols::MyForm::mainForm->ball->getCoord(xb, yb);
-	int delta = rand() % abs(xb - x);
+	
+	int delta = 0;
+
+	//@BUG
+	if (this->x != xb) {
+		delta = rand() % abs(xb - (this->x));
+	}
+	
+	
 	delta = delta>5 ? 5 : delta;
 	if (x < xb) x += speed + delta;
 	if (x > xb) x -= speed + delta;

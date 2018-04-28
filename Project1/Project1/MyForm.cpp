@@ -21,15 +21,47 @@ void Futbols::MyForm::energyControl()
 	int enL = 0, enR = 0;
 	for (int i = 0; i < Team1.Count; i++) enL += Team1[i]->getEnergy();
 	for (int i = 0; i < Team2.Count; i++) enR += Team2[i]->getEnergy();
-	/*EnergyLeft->Caption = IntToStr(enL);
-	SpinEnergyLeft->Position = enL;
-	EnergyRight->Caption = IntToStr(enR);
-	SpinEnergyRight->Position = enR;*/
+	setEnergyTeam1(enL);
+	setEnergyTeam2(enR);
+}
+
+//Thread safe call, nevareju savadak mainit nup veribas.
+delegate void callbackSetEnergyTeam1(int energy);
+void Futbols::MyForm::setEnergyTeam1(int energy) {
+
+	if (this->nudTeam1->InvokeRequired)
+	{
+		callbackSetEnergyTeam1^ d =
+			gcnew callbackSetEnergyTeam1(this, &Futbols::MyForm::setEnergyTeam1);
+		this->Invoke(d, gcnew array<Object^> { energy });
+	}
+	else
+	{
+		this->nudTeam1->Value = energy;
+	}	
+}
+
+delegate void callbackSetEnergyTeam2(int energy);
+void Futbols::MyForm::setEnergyTeam2(int energy) {
+
+	if (this->nudTeam2->InvokeRequired)
+	{
+		callbackSetEnergyTeam1^ d =
+			gcnew callbackSetEnergyTeam1(this, &Futbols::MyForm::setEnergyTeam2);
+		this->Invoke(d, gcnew array<Object^> { energy });
+	}
+	else
+	{
+		this->nudTeam2->Value = energy;
+	}
 }
 
 void Futbols::MyForm::Simulate()
 {
-	startGame();
+	//if (gameState == sGameStart) {
+		startGame();
+	//}
+	
 	while (canSimulateGame) {
 
 		canSimulateGame = true;
@@ -56,14 +88,16 @@ void Futbols::MyForm::Simulate()
 				sound("successtada.wav");
 			}
 			else gameState = sRestartGame;
-			return;
+
+			continue;
+
 		case sRestartGame:
 			::Sleep(1000);
 			for (int i = 0; i<5; ++i) girl[i]->moveTo(xc - 2 * 6 + i * 6, 4);
 			lights[0]->on = lights[1]->on = false;
 			sound("whistle.wav");
 			gameState = sFirstKick;
-			return;
+			continue;	
 
 		}
 
@@ -74,7 +108,8 @@ void Futbols::MyForm::Simulate()
 			ball->moveTo(xc, yc);
 			ball->setSpeed(0);
 			position1();
-			return;
+
+			continue;
 		}
 
 		if (field->isGoalRight(xb, yb))
@@ -84,7 +119,8 @@ void Futbols::MyForm::Simulate()
 			ball->moveTo(xc, yc);
 			ball->setSpeed(0);
 			position2();
-			return;
+			
+			continue;
 		}
 
 		Sleep(500 - 50 * 9);
@@ -205,10 +241,6 @@ void Futbols::MyForm::position1()
 	field->getCentre(xc, yc);
 	referee->moveTo(xc + 50, yc - 50);
 
-	//@HERE
-	assRef1->moveTo(xc, field->getBorderW() /2);
-	assRef2->moveTo(xc, field->);
-
 	Team1[0]->moveTo(xc - 5, yc);
 	for (int i = 1; i < Team1.Count; i++)
 	{
@@ -249,5 +281,7 @@ void Futbols::MyForm::position2()
 void Futbols::MyForm::sound(String ^ soundFile)
 {
 	System::Media::SoundPlayer ^simpleSound = gcnew	System::Media::SoundPlayer(soundFile);
-	if (checkBoxSound->Checked) simpleSound->Play();
+	if (checkBoxSound->Checked) {
+		simpleSound->Play();
+	}		
 }
