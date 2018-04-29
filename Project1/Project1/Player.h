@@ -9,7 +9,7 @@ protected:
 	int teamNo;
 	int No;
 	Rect ^area;
-	//TFont *font;
+	System::Drawing::Font ^font;
 	int sound;
 
 public:

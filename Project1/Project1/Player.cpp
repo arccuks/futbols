@@ -7,22 +7,33 @@
 #include "functions.h"
 #include <stdlib.h>
 
+using namespace System::Drawing;
 
 Player::Player(int t, int n)
 {
 	teamNo = t;
 	No = n;
-	color = t == 1 ? System::Drawing::Color::White : System::Drawing::Color::Red;
+	color = t == 1 ? Color::White : Color::Red;
 	speed = 0;
 	sound = 0;
-	/*font = new TFont;
-	font->Name = "Courier New";
-	font->Height = 2 * r + 1;*/
+	font = gcnew Font("Courier New", 2 * r + 1);
 	inGame = true;
 }
 void Player::draw(System::Drawing::BufferedGraphics ^bf)
 {
 	Human::draw(bf);
+
+	StringFormat^ drawFormat = gcnew StringFormat();
+	SolidBrush^ drawBrush = gcnew SolidBrush(Color::Black);
+
+	bf->Graphics->DrawString(
+		No.ToString(),
+		font,
+		drawBrush,
+		x - r*2 + 2,
+		y - r*2,
+		drawFormat
+	);
 
 	switch (sound) {
 	case 0: break;
@@ -142,7 +153,7 @@ void Player::avoidCollision()
 			dist = distance(xa, ya, occupiedPos[i].x, occupiedPos[i].y);
 			if (tooClose) {
 				--attempts;
-				speeda = speeda + dist - lim;//disperse(speed, lim);
+				speeda = speeda + dist - lim;
 				dira = disperse(dir, PI / 12);
 				xa = x + speeda * cos(dira);
 				ya = y - speeda * sin(dira);
