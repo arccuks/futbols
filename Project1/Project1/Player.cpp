@@ -159,14 +159,14 @@ void Player::avoidCollision()
 
 void Player::moveToBench()
 {
-	int xc, yc;
+	int xc = 0, yc = 0;
 	Futbols::MyForm::mainForm->field->getCentre(xc, yc);
 	if (teamNo == 1)
 		moveTo(xc - 20 - No * 3 * r,
-			Futbols::MyForm::mainForm->field->fieldRect->top - Futbols::MyForm::mainForm->field->getW() + r);
+			Futbols::MyForm::mainForm->field->fieldRect->top - Futbols::MyForm::mainForm->field->getBorderW() + r);
 	else
 		moveTo(xc + 20 + No * 3 * r,
-			Futbols::MyForm::mainForm->field->fieldRect->top - Futbols::MyForm::mainForm->field->getW() + r);
+			Futbols::MyForm::mainForm->field->fieldRect->top - Futbols::MyForm::mainForm->field->getBorderW() + r);
 }
 
 TPoint& Player::partner()
