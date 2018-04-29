@@ -41,6 +41,21 @@ void Futbols::MyForm::setEnergyTeam1(int energy) {
 	}	
 }
 
+delegate void cbSetCommentText(String ^);
+void Futbols::MyForm::setCommentText(String ^text) {
+
+	if (this->nudTeam1->InvokeRequired)
+	{
+		cbSetCommentText^ d =
+			gcnew cbSetCommentText(this, &Futbols::MyForm::setCommentText);
+		this->Invoke(d, gcnew array<Object^> { text });
+	}
+	else
+	{
+		this->textBoxComments->Text = text;
+	}
+}
+
 delegate void callbackSetEnergyTeam2(int energy);
 void Futbols::MyForm::setEnergyTeam2(int energy) {
 
@@ -66,8 +81,6 @@ void Futbols::MyForm::Simulate()
 
 		canSimulateGame = true;
 
-		//textBoxTime->Text = (++time).ToString();
-
 		int xc, yc, xb, yb;
 		field->getCentre(xc, yc);
 		ball->getCoord(xb, yb);
@@ -77,11 +90,8 @@ void Futbols::MyForm::Simulate()
 		switch (gameState) {
 		case sGoal:
 			::Sleep(1000);
-			//FG_Frm->CommentText->Caption = "***** GOAL!!! *****";
 			sound("whistle.wav");
 			sound("mencheer.wav");
-			/*textBoxScore1->Text = scoreL.ToString();
-			textBoxScore2->Text = scoreR.ToString();*/
 			if (checkBoxGirls->Checked) {
 				gameState = sPause;
 				lights[0]->on = lights[1]->on = true;
@@ -127,8 +137,7 @@ void Futbols::MyForm::Simulate()
 
 		moveAll();
 
-		energyControl();
-		
+		energyControl();		
 	}
 }
 
@@ -279,7 +288,7 @@ void Futbols::MyForm::position2()
 
 void Futbols::MyForm::sound(String ^ soundFile)
 {
-	System::Media::SoundPlayer ^simpleSound = gcnew	System::Media::SoundPlayer(soundFile);
+	System::Media::SoundPlayer ^simpleSound = gcnew	System::Media::SoundPlayer("sound\\"+soundFile);
 	if (checkBoxSound->Checked) {
 		simpleSound->Play();
 	}		

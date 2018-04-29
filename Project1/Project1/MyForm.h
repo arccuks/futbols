@@ -120,38 +120,21 @@ namespace Futbols {
 	private: System::Windows::Forms::CheckBox^  cbT24;
 	private: System::Windows::Forms::CheckBox^  cbT23;
 	private: System::Windows::Forms::CheckBox^  cbT22;
-
-
-
-
-
 	private: System::Windows::Forms::CheckBox^  cbT16;
-
 	private: System::Windows::Forms::CheckBox^  cbT15;
-
 	private: System::Windows::Forms::CheckBox^  cbT14;
-
 	private: System::Windows::Forms::CheckBox^  cbT13;
-
 	private: System::Windows::Forms::CheckBox^  cbT12;
 	private: System::Windows::Forms::CheckBox^  checkBoxPause;
 	private: System::Windows::Forms::TrackBar^  trackBarSpeed;
 	private: System::Windows::Forms::Label^  labelSpeed;
-
-			 int time;
 	private: System::Windows::Forms::TextBox^  textBoxTime;
-
 	private: System::Windows::Forms::TextBox^  textBoxScore1;
-
 	private: System::Windows::Forms::TextBox^  textBoxScore2;
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Timer^  timer1;
-
-			 int slowdown;
-			 void energyControl();
-			 void setEnergyTeam1(int);
-			 void setEnergyTeam2(int);
+	private: System::Windows::Forms::TextBox^  textBoxComments;
 
 	public:
 		Ball ^ ball;
@@ -165,12 +148,35 @@ namespace Futbols {
 		static array<Lights^> ^lights = gcnew array<Lights^>(2);
 
 		String ^EnergyLeft;
+		state gameState;
+
+		void sound(String ^soundFile);
 
 		void Simulate();
+		void setCommentText(String^);
 		static MyForm ^mainForm;
 		static Panel ^FieldImage;
+	private:
+		void startGame();
+		void drawAll();
+		void moveAll();
+		void position0();
+		void position1();
+		void position2();
+		void energyControl();
 
-		state gameState;
+		int scoreL;
+		int scoreR;
+		int time;
+
+		//Mani mainigie, iespejams, so visu var savadak darit
+		int slowdown;
+		bool canSimulateGame = false;
+
+		void setEnergyTeam1(int);
+		void setEnergyTeam2(int);
+		
+		Thread ^drawThread;
 
 	protected:
 		/// <summary>
@@ -185,27 +191,7 @@ namespace Futbols {
 		}
 	private: System::Windows::Forms::Button^  buttonStart;
 	private: System::Windows::Forms::Button^  buttonStop;
-	private:
-		bool canSimulateGame = false;
-		Thread ^drawThread;
-
-	private:
-		void startGame();
-		void drawAll();
-		void moveAll();
-		void position0();
-		void position1();
-		void position2();
-		void sound(String ^soundFile);
-
-		int scoreL;
-		int scoreR;
 	private: System::ComponentModel::IContainer^  components;
-
-
-
-	protected:
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -247,6 +233,7 @@ namespace Futbols {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->textBoxComments = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->nudTeam1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->nudTeam2))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -282,13 +269,15 @@ namespace Futbols {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->panelField->Location = System::Drawing::Point(12, 12);
 			this->panelField->Name = L"panelField";
-			this->panelField->Size = System::Drawing::Size(548, 422);
+			this->panelField->Size = System::Drawing::Size(548, 362);
 			this->panelField->TabIndex = 2;
 			// 
 			// checkBoxSound
 			// 
 			this->checkBoxSound->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->checkBoxSound->AutoSize = true;
+			this->checkBoxSound->Checked = true;
+			this->checkBoxSound->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBoxSound->Location = System::Drawing::Point(566, 328);
 			this->checkBoxSound->Name = L"checkBoxSound";
 			this->checkBoxSound->Size = System::Drawing::Size(57, 17);
@@ -562,7 +551,7 @@ namespace Futbols {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel1->Location = System::Drawing::Point(566, 59);
+			this->panel1->Location = System::Drawing::Point(566, 101);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(53, 12);
 			this->panel1->TabIndex = 14;
@@ -571,7 +560,7 @@ namespace Futbols {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Red;
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel2->Location = System::Drawing::Point(625, 59);
+			this->panel2->Location = System::Drawing::Point(625, 101);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(52, 12);
 			this->panel2->TabIndex = 15;
@@ -581,11 +570,25 @@ namespace Futbols {
 			this->timer1->Interval = 50;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
+			// textBoxComments
+			// 
+			this->textBoxComments->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->textBoxComments->BackColor = System::Drawing::Color::Black;
+			this->textBoxComments->Font = (gcnew System::Drawing::Font(L"Courier New", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBoxComments->ForeColor = System::Drawing::Color::LimeGreen;
+			this->textBoxComments->Location = System::Drawing::Point(137, 380);
+			this->textBoxComments->Name = L"textBoxComments";
+			this->textBoxComments->Size = System::Drawing::Size(318, 20);
+			this->textBoxComments->TabIndex = 16;
+			this->textBoxComments->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(689, 455);
+			this->ClientSize = System::Drawing::Size(689, 413);
+			this->Controls->Add(this->textBoxComments);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->textBoxScore2);
@@ -635,7 +638,7 @@ namespace Futbols {
 		timer1->Enabled = false;
 		this->buttonStart->Enabled = true;
 		this->buttonStop->Enabled = false;
-		//FG_Frm->CommentText->Caption = "Pause...";
+		textBoxComments->Text = "Pause...";
 		gameState = sStop;
 	}
 	private: System::Void MyForm_ResizeEnd(System::Object^  sender, System::EventArgs^  e) {
@@ -711,7 +714,7 @@ namespace Futbols {
 		if (gameState != sStop) {
 			timer1->Enabled = true;
 		}
-		
+
 	}
 	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 
@@ -721,6 +724,7 @@ namespace Futbols {
 		case sGoal:
 			textBoxScore1->Text = scoreL.ToString();
 			textBoxScore2->Text = scoreR.ToString();
+			textBoxComments->Text = "***** GOAL!!! *****";
 			break;
 		}
 	}

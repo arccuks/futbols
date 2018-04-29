@@ -97,6 +97,10 @@
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
+    <PreBuildEvent>
+      <Command>mkdir "$(TargetDir)sound"
+Copy /Y "$(SolutionDir)$(RootNameSpace)\sound\*" "$(TargetDir)sound\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -179,6 +183,14 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Futbols.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\Kick1.wav" />
+    <Media Include="sound\Kick2.wav" />
+    <Media Include="sound\Kick3.wav" />
+    <Media Include="sound\mencheer.wav" />
+    <Media Include="sound\successtada.wav" />
+    <Media Include="sound\whistle.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

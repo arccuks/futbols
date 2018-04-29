@@ -127,4 +127,24 @@
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\Kick1.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sound\Kick2.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sound\Kick3.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sound\mencheer.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sound\successtada.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sound\whistle.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

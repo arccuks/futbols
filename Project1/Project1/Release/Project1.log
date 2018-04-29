@@ -1,0 +1,341 @@
+﻿  AssReferee.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+  Ball.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\ball.cpp(25): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\ball.cpp(26): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  Field.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\field.cpp(20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Forward.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+  FullBack.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\fullback.cpp(44): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\fullback.cpp(45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\fullback.cpp(50): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\fullback.cpp(51): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  functions.cpp
+c:\git\futbols\project1\project1\functions.cpp(15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(40): warning C4305: '=': truncation from 'double' to 'float'
+c:\git\futbols\project1\project1\functions.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(47): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(51): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(60): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(61): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\functions.cpp(36): warning C4101: 'angr': unreferenced local variable
+  Girl.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+  Goalkeeper.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\goalkeeper.cpp(39): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\goalkeeper.cpp(40): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  HalfBack.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\halfback.cpp(39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Human.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+  Lights.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\lights.cpp(31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(32): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\lights.cpp(42): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  MyForm.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+  Player.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\player.cpp(51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(63): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(64): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(80): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(86): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(94): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(99): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(150): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(151): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\player.cpp(177): warning C4101: 'dist': unreferenced local variable
+  Rect.cpp
+  Referee.cpp
+c:\git\futbols\project1\project1\human.h(13): warning C4570: 'Human': is not explicitly declared as abstract but has abstract functions
+  c:\git\futbols\project1\project1\human.h(13): note: 'void Human::move(void)': is abstract
+  c:\git\futbols\project1\project1\human.h(33): note: see declaration of 'Human::move'
+c:\git\futbols\project1\project1\myform.h(153): warning C4677: 'ball': signature of non-private member contains assembly private type 'Ball'
+  c:\git\futbols\project1\project1\ball.h(4): note: see declaration of 'Ball'
+c:\git\futbols\project1\project1\myform.h(154): warning C4677: 'field': signature of non-private member contains assembly private type 'Field'
+  c:\git\futbols\project1\project1\field.h(7): note: see declaration of 'Field'
+c:\git\futbols\project1\project1\myform.h(155): warning C4677: 'referee': signature of non-private member contains assembly private type 'Referee'
+  c:\git\futbols\project1\project1\referee.h(3): note: see declaration of 'Referee'
+c:\git\futbols\project1\project1\myform.h(156): warning C4677: 'assRef1': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(157): warning C4677: 'assRef2': signature of non-private member contains assembly private type 'AssReferee'
+  c:\git\futbols\project1\project1\assreferee.h(4): note: see declaration of 'AssReferee'
+c:\git\futbols\project1\project1\myform.h(158): warning C4677: 'Team1': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(159): warning C4677: 'Team2': signature of non-private member contains assembly private type 'Player'
+  c:\git\futbols\project1\project1\player.h(6): note: see declaration of 'Player'
+c:\git\futbols\project1\project1\myform.h(160): warning C4677: 'girl': signature of non-private member contains assembly private type 'Girl'
+  c:\git\futbols\project1\project1\girl.h(4): note: see declaration of 'Girl'
+c:\git\futbols\project1\project1\myform.h(161): warning C4677: 'lights': signature of non-private member contains assembly private type 'Lights'
+  c:\git\futbols\project1\project1\lights.h(4): note: see declaration of 'Lights'
+c:\git\futbols\project1\project1\referee.cpp(23): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\git\futbols\project1\project1\referee.cpp(24): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  TPoint.cpp
+  Generating Code...
+c:\git\futbols\project1\project1\player.cpp(201): warning C4172: returning address of local variable or temporary: p
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+LINK : fatal error LNK1561: entry point must be defined

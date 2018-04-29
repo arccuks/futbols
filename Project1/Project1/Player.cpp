@@ -23,19 +23,16 @@ Player::Player(int t, int n)
 void Player::draw(System::Drawing::BufferedGraphics ^bf)
 {
 	Human::draw(bf);
-	/*aCanvas->Font = font;
-	aCanvas->Brush->Style = bsClear;
-	aCanvas->TextOutA(x - r + 1, y - r, IntToStr(No));*/
 
 	switch (sound) {
 	case 0: break;
-	/*case 1: Futbols::MyForm::mainForm->sound("kick1.wav", SND_ASYNC); break;
-	case 2: Futbols::MyForm::mainForm->sound("kick2.wav", SND_ASYNC); break;
-	case 3: Futbols::MyForm::mainForm->sound("kick3.wav", SND_ASYNC); break;*/
+	case 1: Futbols::MyForm::mainForm->sound("kick1.wav"); break;
+	case 2: Futbols::MyForm::mainForm->sound("kick2.wav"); break;
+	case 3: Futbols::MyForm::mainForm->sound("kick3.wav"); break;
 	};
 	if (sound) {
-		/*Futbols::MyForm::mainForm->CommentText->Caption = "Team " + IntToStr(teamNo) +
-			", No. " + IntToStr(No);*/
+		Futbols::MyForm::mainForm->setCommentText("Team " + (teamNo).ToString() +
+			", No. " + (No).ToString());
 	}
 	sound = 0;
 }
