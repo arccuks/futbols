@@ -58,15 +58,15 @@ void Futbols::MyForm::setEnergyTeam2(int energy) {
 
 void Futbols::MyForm::Simulate()
 {
-	//if (gameState == sGameStart) {
+	if (gameState == sGameStart || !checkBoxPause->Checked) {
 		startGame();
-	//}
+	}
 	
 	while (canSimulateGame) {
 
 		canSimulateGame = true;
 
-		//TimeTxt->Caption = IntToStr(++time);
+		//textBoxTime->Text = (++time).ToString();
 
 		int xc, yc, xb, yb;
 		field->getCentre(xc, yc);
@@ -80,8 +80,8 @@ void Futbols::MyForm::Simulate()
 			//FG_Frm->CommentText->Caption = "***** GOAL!!! *****";
 			sound("whistle.wav");
 			sound("mencheer.wav");
-			/*ScoreLeft->Caption = IntToStr(scoreL);
-			ScoreRight->Caption = IntToStr(scoreR);*/
+			/*textBoxScore1->Text = scoreL.ToString();
+			textBoxScore2->Text = scoreR.ToString();*/
 			if (checkBoxGirls->Checked) {
 				gameState = sPause;
 				lights[0]->on = lights[1]->on = true;
@@ -123,8 +123,7 @@ void Futbols::MyForm::Simulate()
 			continue;
 		}
 
-		Sleep(500 - 50 * 9);
-		//::Sleep(500 - 50 * TrackBar->Position);  //slows down action
+		Sleep(500 - 50 * slowdown);  //slows down action		
 
 		moveAll();
 
